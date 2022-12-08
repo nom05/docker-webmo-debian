@@ -22,7 +22,7 @@ vim ./webmoinfo
 DOCKER_BUILDKIT=1 docker build --secret id=webmoinfo,src=./webmoinfo -t image_name .
 ```
 `./webmoinfo` is the file created previously with the WebMO license/password.
-Now the image is created. Use a `docker-compose` file or `docker run` to test your image:
+Now the image is created. Use a `docker-compose` file or `docker run` to test your image. Keep in mind the image exposes **_port 80_**:
 ```bash
 docker run -ti --name container_name -p 8080:80 image_name
 ```
