@@ -1,0 +1,19 @@
+---
+version: "3"
+services:
+  webmo:
+    image: nico/webmo22nico:latest
+    container_name: WebMO22-testing
+    restart: unless-stopped
+    volumes:
+      - /scratch:/scratch
+      - /usr/local/g16c1/avx2/g16:/usr/local/g16
+    ports:
+      - 8080:80
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
+
